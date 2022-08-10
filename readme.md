@@ -1,4 +1,4 @@
-# lyx-colorcheme-brewer
+# lyx-colorscheme-brewer
 
 A colorscheme brewer for LyX. It takes standard 16-color terminal palettes and turns them into
 LyX colorschemes.
@@ -6,8 +6,8 @@ LyX colorschemes.
 ## Ready-to-use color schemes
 
 The following schemes are currently pre-packaged and ready to be used:
-* onedark
-* gruvbox
+* [onedark](out/onedark)
+* [gruvbox](out/gruvbox)
 
 To use them, either manually copy the contents of the scheme files from the [out](out)
 folder into the "colors" section of the `preferences` file in your LyX configuration
