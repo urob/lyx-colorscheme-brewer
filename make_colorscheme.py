@@ -6,8 +6,10 @@ Usage: ./make_colorscheme.py palette
 Output: palette.out
 """
 
-# get color palette from commmand line argument
+import os
 import sys
+
+# get color palette from commmand line argument
 colors = str(sys.argv[1])
 
 # import color definitions
@@ -98,7 +100,12 @@ colorscheme = {
 }
 
 # export the colorscheme
-file = "out/" + colors + "_lyx_cs"
+path = "out"
+file = os.path.join(path, colors + "_lyx_cs")
+
+if not os.path.exists(path):
+    os.makedirs(path)
+
 with open(file, "w") as o:
     o.write("# " + colors + " colorscheme for LyX\n")
 
