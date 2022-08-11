@@ -3,7 +3,7 @@
 Colorscheme brewer for LyX
 
 Usage: ./make_colorscheme.py palette
-Output: palette.out
+Output: out/palette_lyx_cs
 """
 
 import os
