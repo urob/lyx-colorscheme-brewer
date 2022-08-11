@@ -1,29 +1,67 @@
 # lyx-colorscheme-brewer
 
-A colorscheme brewer for LyX. It takes standard 16-color terminal palettes and turns them into
+A colorscheme brewer for LyX. It takes 16 color palettes and turns them into
 LyX colorschemes.
 
 ## Ready-to-use color schemes
 
-The following schemes are currently pre-packaged and ready to be used:
-* [onedark](out/onedark)
-* [gruvbox](out/gruvbox)
+The following ready-to-use schemes have been created with `lyx-colorscheme-brewer`
+* [onedark](https://github.com/urob/onedark.lyx)
+* [gruvbox](https://github.com/urob/gruvbox.lyx)
 
 <a href="screenshots/onedark.png"><img src="screenshots/onedark.png" width="412"></a>
 <a href="screenshots/gruvbox.png"><img src="screenshots/gruvbox.png" width="412"></a>
 
-To use them, either manually copy the contents of the scheme files from the [out](out)
-folder into the "colors" section of the `preferences` file in your LyX configuration
-folder. Or, use the bundled `install_colorscheme.sh` script:
-```
-./install_colorscheme.sh out/scheme_name filepath/to/preferences
-```
+See their repositories for detailed install instructions.
 
-## Making new color schemes
+## Creating new color schemes
 
-To create a new colorscheme, place the palette containing the color definitions inside
-the `colors` folder, and then run: 
-```
-make_colorscheme.py scheme_name
-```
-This will create a LyX colorscheme inside the `out` folder.
+1. Create a color palette for the theme named `theme_name.def` and save it to the
+    `colors` folder. Palettes are Python dictionaries and should define the same 16 + 3
+    color keys defined in the following example: 
+    ```py
+    palette = {
+        # special
+        "foreground":    "#ebdbb2",
+        "background":    "#282828",
+        "cursorcolor":   "#ebdbb2",
+
+        # black
+        "black":         "#3c3836",
+        "brightblack":   "#504945",
+
+        # red
+        "red":           "#fb4934",
+        "brightred":     "#cc241d",
+
+        # green
+        "green":         "#b8bb26",
+        "brightgreen":   "#98971a",
+
+        # yellow
+        "yellow":        "#fabd2f",
+        "brightyellow":  "#d79921",
+
+        # blue
+        "blue":          "#83a598",
+        "brightblue":    "#458588",
+
+        # magenta
+        "magenta":       "#d1849b",
+        "brightmagenta": "#b16286",
+
+        # cyan
+        "cyan":          "#8ec07c",
+        "brightcyan":    "#689d6a",
+
+        # gray/white
+        "gray":          "#a89984",
+        "white":         "#ebdbb2",
+    }
+    ```
+2. Run the `make_colorscheme.py` script. For example, to create the Gruvbox color scheme
+   from the `gruvbox.def` file, run:
+    ```
+    make_colorscheme.py gruvbox
+    ```
+    The created LyX colorscheme will be placed inside the `out` folder.

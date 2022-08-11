@@ -17,7 +17,7 @@ exec(open("colors/" + colors + ".def").read())
 
 palette["note_bg"]    = palette["black"]  # note, comment, grayedout content background
 palette["note_fg"]    = palette["green"]  # note, comment, grayedout label foreground
-palette["formatting"] = palette["white"]  # spaces, newpages, etc
+palette["formatting"] = palette["gray"]   # spaces, newpages, etc
 
 # map the palette to LyX colors
 colorscheme = {
@@ -46,7 +46,7 @@ colorscheme = {
     "cursor":                    palette["cursorcolor"],  # CURSOR_COLOR
     "deletedtext":               palette["red"],          # deleted text
     "deletedtextmodifier":       palette["background"],   # track changes: deleted text (blended with author color)
-    "depthbar":                  palette["white"],        # margin lines for nested environments
+    "depthbar":                  palette["gray"],         # margin lines for nested environments
     "eolmarker":                 palette["formatting"],   # FORMATTING: linebreak
     "error":                     palette["red"],          # latex error
     "footlabel":                 palette["green"],        # footnote label-fg
@@ -72,14 +72,14 @@ colorscheme = {
     "mathmacroframe":            palette["brightblack"],  #   - " -
     "mathmacrohoverbg":          palette["brightblack"],  #   - " -
     "mathmacronewarg":           palette["foreground"],   #   - " -
-    "mathmacrooldarg":           palette["white"],        #   - " -
+    "mathmacrooldarg":           palette["gray"],         #   - " -
     "newpage":                   palette["formatting"],   # FORMATTING: newpage
-    "nonuniqueinlinecompletion": palette["white"],        # grayed out text when completing with TAB
+    "nonuniqueinlinecompletion": palette["gray"],         # grayed out text when completing with TAB
     "note":                      palette["note_fg"],      # NOTE_FG: lyx-note button label-fg
     "notebg":                    palette["note_bg"],      # NOTE_BG: lyx-note
     "pagebreak":                 palette["formatting"],   # FORMATTING: pagebreak
     "paragraphmarker":           palette["brightblack"],  # paragraph markers (¶)
-    "phantomtext":               palette["white"],        # text color for phantom insets
+    "phantomtext":               palette["gray"],         # text color for phantom insets
     "preview":                   palette["foreground"],   # FOREGROUND: mathpreview
     "previewframe":              palette["yellow"],       # preview frame (for ERT)
     "regexpframe":               palette["green"],        # color for regexp frame
@@ -88,9 +88,9 @@ colorscheme = {
     "selectiontext":             palette["background"],   # selection foreground
     "shaded":                    palette["brightblack"],  # shaded box background
     "special":                   palette["yellow"],       # special chars text color
-    "tabularline":               palette["white"],        # tabular lines
-    "tabularonoffline":          palette["white"],        # ???
-    "urllabel":                  palette["white"],        # url-label (hidden when collapsed)
+    "tabularline":               palette["gray"],         # tabular lines
+    "tabularonoffline":          palette["gray"],         # ???
+    "urllabel":                  palette["gray"],         # url-label (hidden when collapsed)
     "urltext":                   palette["magenta"],      # url
     "blue":                      palette["blue"],         # for beamer layout
     "green":                     palette["green"],        # for beamer layout
@@ -98,7 +98,7 @@ colorscheme = {
 }
 
 # export the colorscheme
-file = "out/" + colors
+file = "out/" + colors + "_lyx_cs"
 with open(file, "w") as o:
     o.write("# " + colors + " colorscheme for LyX\n")
 

@@ -33,7 +33,7 @@ palette = {
     "brightcyan":    "#689d6a",
 
     # gray/white
-    "white":         "#a89984",
-    "brightwhite":   "#ebdbb2",
+    "gray":          "#a89984",
+    "white":         "#ebdbb2",
 }
 
