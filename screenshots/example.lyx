@@ -1,0 +1,253 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch a branch
+\selected 0
+\filename_suffix 0
+\color #282c34
+\end_branch
+\index Index
+\shortcut idx
+\color #98c379
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+LyX Color Scheme Preview
+\end_layout
+
+\begin_layout Standard
+This is LyX with the 
+\family typewriter
+\series bold
+onedark
+\series default
+ 
+\family default
+color scheme.
+ This is a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+custom
+\end_layout
+
+\end_inset
+
+ ERT command.
+ This is a (collapsed) float: 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Here's some math: 
+\begin_inset Formula 
+\begin{equation}
+\int_{a}^{b}f'(x)\,dx=f(b)-f(a).\label{FToC}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a reference to equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "FToC"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, a (collapsed) footnote
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+, an url 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/urob/lyx-colorscheme-brewer
+\end_layout
+
+\end_inset
+
+, and a random program listing:
+\begin_inset listings
+lstparams "language=Python,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+##
+\end_layout
+
+\begin_layout Plain Layout
+
+# to brew a new colorscheme run:
+\end_layout
+
+\begin_layout Plain Layout
+
+./make_colorscheme.py scheme_name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is a top-level itemize environment
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This is a nested itemize environment
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is a LyX note.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+(a)
+\end_layout
+
+\end_inset
+
+This is a custom item
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+\begin_inset Formula $1=0.9999999999999\dots$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

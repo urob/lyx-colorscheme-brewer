@@ -9,6 +9,9 @@ The following schemes are currently pre-packaged and ready to be used:
 * [onedark](out/onedark)
 * [gruvbox](out/gruvbox)
 
+<a href="screenshots/onedark.png"><img src="screenshots/onedark.png" width="412"></a>
+<a href="screenshots/gruvbox.png"><img src="screenshots/gruvbox.png" width="412"></a>
+
 To use them, either manually copy the contents of the scheme files from the [out](out)
 folder into the "colors" section of the `preferences` file in your LyX configuration
 folder. Or, use the bundled `install_colorscheme.sh` script:
