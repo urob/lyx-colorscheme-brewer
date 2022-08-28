@@ -1,6 +1,6 @@
 # lyx-colorscheme-brewer
 
-A colorscheme brewer for LyX. It takes 16 color palettes and turns them into
+A colorscheme brewer for LyX. It takes 16-color palettes and turns them into
 LyX colorschemes.
 
 ## Ready-to-use color schemes
