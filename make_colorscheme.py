@@ -13,9 +13,8 @@ import sys
 colors = str(sys.argv[1])
 
 # import color definitions
-palette = None
-exec(open("colors/" + colors + ".def").read())
-# palette = __import__(colors).palette
+sys.path.append("./colors")
+palette = __import__(colors).palette
 
 palette["note_bg"]    = palette["black"]  # note, comment, grayedout content background
 palette["note_fg"]    = palette["green"]  # note, comment, grayedout label foreground
