@@ -98,6 +98,11 @@ colorscheme = {
     "red":                       palette["red"],          # for beamer layout
 }
 
+
+def quote(s):
+    return '"' + s + '"'
+
+
 # export the colorscheme
 path = "out"
 file = os.path.join(path, colors + "_lyx_cs")
@@ -110,5 +115,6 @@ with open(file, "w") as o:
 
 with open(file, "a") as o:
     for color, value in colorscheme.items():
-        o.write('\set_color "' + color + '" "' + value + '"\n')
+        _c = ("\set_color", quote(color), *2 * (quote(value),))
+        o.write(" ".join(_c) + "\n")
 
