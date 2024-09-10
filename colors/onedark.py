@@ -1,39 +1,27 @@
 palette = {
     # special
-    "foreground":    "#abb2bf",
-    "background":    "#282c34",
-    "cursorcolor":   "#abb2bf",
+    "background":       "#282c34",
+    "background_dark":  "#21252b",
+    "foreground":       "#abb2bf",
+    "cursor":           "#abb2bf",
 
-    # black
-    "black":         "#2c323c",
-    "brightblack":   "#3e4452",
+    # graytones
+    "black":            "#181a1f",
+    "darkgray":         "#3b3f4c",
+    "gray":             "#5c6370",
+    "lightgray":        "#848b98",
+    "white":            "#abb2bf",
 
-    # red
-    "red":           "#e06c75",
-    "brightred":     "#e06c75",
-
-    # green
-    "green":         "#98c379",
-    "brightgreen":   "#98c379",
-
-    # yellow
-    "yellow":        "#e5c07b",
-    "brightyellow":  "#e5c07b",
-
-    # blue
-    "blue":          "#61afef",
-    "brightblue":    "#61afef",
-
-    # magenta
-    "magenta":       "#c678dd",
-    "brightmagenta": "#c678dd",
-
-    # cyan
-    "cyan":          "#56b6c2",
-    "brightcyan":    "#56b6c2",
-
-    # gray/white
-    "gray":          "#5c6370",
-    "white":         "#abb2bf",
+    # primary
+    "red":              "#e06c75",
+    "darkred":          "#993939",
+    "green":            "#98c379",
+    "yellow":           "#e5c07b",
+    "orange":           "#d19a66",
+    "blue":             "#61afef",
+    "magenta":          "#c678dd",
+    "purple":           "#8a3fa0",
+    "cyan":             "#56b6c2",
+    "teal":             "#2b6f77",
 }
 

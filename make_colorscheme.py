@@ -16,86 +16,143 @@ colors = str(sys.argv[1])
 sys.path.append('./colors')
 palette = __import__(colors).palette
 
-palette['note_bg'] = palette['black']  # note, comment, grayedout content background
-palette['note_fg'] = palette['green']  # note, comment, grayedout label foreground
-palette['formatting'] = palette['gray']  # spaces, newpages, etc
-
 # map the palette to LyX colors
+# https://www.lyx.org/trac/browser/lyxgit/src/Color.cpp
+# https://www.lyx.org/trac/browser/lyxgit/src/ColorCode.h
 colorscheme = {
-    'added_space':               palette['formatting'],   # FORMATTING: spaces
-    'addedtext':                 palette['yellow'],       # ???
-    'appendix':                  palette['formatting'],   # FORMATTING: begin appendix
-    'background':                palette['background'],   # BACKGROUND: main canvas
-    'bottomarea':                palette['background'],   # only relevant if scroll below end of document is activated in settings
-    'branchlabel':               palette['yellow'],       # branch label
-    'buttonbg':                  palette['background'],   # less distracting button
-    'buttonframe':               palette['brightblack'],  # buttonframe
-    'buttonhoverbg':             palette['brightblack'],  # button background when hovered
-    'changebar':                 palette['blue'],         # track changes: changed-lines marker in left margin
-    'changedtextauthor1':        palette['blue'],         # track changes: N-th author's changed text
-    'changedtextauthor2':        palette['magenta'],      #   - " -
-    'changedtextauthor3':        palette['cyan'],         #   - " -
-    'changedtextauthor4':        palette['green'],        #   - " -
-    'changedtextauthor5':        palette['yellow'],       #   - " -
-    'collapsible':               palette['yellow'],       # label-fg for non-note collapsiles (floats, etc)
-    'collapsibleframe':          palette['brightblack'],  # frame for collapsibles content (notes, floats, etc)
-    'command':                   palette['blue'],         # label-fg for cites, refs, labels, etc
-    'commandbg':                 palette['background'],   # command insets background (eg, index list)
-    'commandframe':              palette['brightblack'],  # command inset frame (eg, index list)
-    'comment':                   palette['note_fg'],      # NOTE_FG: comment-note button label-fg
-    'commentbg':                 palette['note_bg'],      # NOTE_BG: comment-note
-    'cursor':                    palette['cursorcolor'],  # CURSOR_COLOR
-    'deletedtext':               palette['red'],          # deleted text
-    'deletedtextmodifier':       palette['background'],   # track changes: deleted text (blended with author color)
-    'depthbar':                  palette['gray'],         # margin lines for nested environments
-    'eolmarker':                 palette['formatting'],   # FORMATTING: linebreak
-    'error':                     palette['red'],          # latex error
-    'footlabel':                 palette['green'],        # footnote label-fg
-    'foreground':                palette['foreground'],   # FOREGROUND: text
-    'graphicsbg':                palette['background'],   # ???
-    'greyedout':                 palette['note_fg'],      # NOTE_FG: grayed-out-note button label-fg
-    'greyedoutbg':               palette['note_bg'],      # NOTE_BG: greyed-out-note
-    'indexlabel':                palette['green'],        # label-color for index entry
-    'inlinecompletion':          palette['foreground'],   # FOREGROUND: unambigous completion part, cf nouniqueinlinecompletion
-    'insetbg':                   palette['brightblack'],  # ???
-    'insetframe':                palette['yellow'],       # ???
-    'language':                  palette['magenta'],      # color for marking foreign language words
-    'latex':                     palette['cyan'],         # latex + beamer (frame/section)
-    'listingsbg':                palette['brightblack'],  # program code
-    'marginlabel':               palette['magenta'],      # margin-note label
-    'math':                      palette['foreground'],   # FOREGROUND: math
-    'mathbg':                    palette['background'],   # BACKGROUND: math
-    'mathcorners':               palette['background'],   # hide corners
-    'mathframe':                 palette['cyan'],         # corners when hovering
-    'mathline':                  palette['cyan'],         # empty placeholders (arrays, etc)
-    'mathmacrobg':               palette['background'],   # math-macro config
-    'mathmacroblend':            palette['foreground'],   #   - " -
-    'mathmacroframe':            palette['brightblack'],  #   - " -
-    'mathmacrohoverbg':          palette['brightblack'],  #   - " -
-    'mathmacronewarg':           palette['foreground'],   #   - " -
-    'mathmacrooldarg':           palette['gray'],         #   - " -
-    'newpage':                   palette['formatting'],   # FORMATTING: newpage
-    'nonuniqueinlinecompletion': palette['gray'],         # grayed out text when completing with TAB
-    'note':                      palette['note_fg'],      # NOTE_FG: lyx-note button label-fg
-    'notebg':                    palette['note_bg'],      # NOTE_BG: lyx-note
-    'pagebreak':                 palette['formatting'],   # FORMATTING: pagebreak
-    'paragraphmarker':           palette['brightblack'],  # paragraph markers (¶)
-    'phantomtext':               palette['gray'],         # text color for phantom insets
-    'preview':                   palette['foreground'],   # FOREGROUND: mathpreview
-    'previewframe':              palette['yellow'],       # preview frame (for ERT)
-    'regexpframe':               palette['green'],        # color for regexp frame
-    'scroll':                    palette['red'],          # scroll indicator
-    'selection':                 palette['yellow'],       # selection background
-    'selectiontext':             palette['background'],   # selection foreground
-    'shaded':                    palette['brightblack'],  # shaded box background
-    'special':                   palette['yellow'],       # special chars text color
-    'tabularline':               palette['gray'],         # tabular lines
-    'tabularonoffline':          palette['gray'],         # ???
-    'urllabel':                  palette['gray'],         # url-label (hidden when collapsed)
-    'urltext':                   palette['magenta'],      # url
-    'blue':                      palette['blue'],         # for beamer layout
-    'green':                     palette['green'],        # for beamer layout
-    'red':                       palette['red'],          # for beamer layout
+    # The different text colors
+    'black':                     palette['black'],
+    'white':                     palette['white'],
+    'blue':                      palette['blue'],
+    'cyan':                      palette['cyan'],
+    'darkgray':                  palette['darkgray'],
+    'gray':                      palette['gray'],
+    'green':                     palette['green'],
+    'lightgray':                 palette['lightgray'],
+    'magenta':                   palette['magenta'],
+    'orange':                    palette['orange'],
+    'purple':                    palette['purple'],
+    'red':                       palette['red'],
+    'teal':                      palette['teal'],
+    'yellow':                    palette['yellow'],
+    # 'brown'
+    # 'lime'
+    # 'olive'
+    # 'pink'
+    # 'violet'
+
+    # Core colors
+    'cursor':                    palette['cursor'],           # Cursor color
+    'background':                palette['background'],       # Background of main canvas
+    'foreground':                palette['foreground'],       # Default text color
+    'selection':                 palette['yellow'],           # Background color of selected text/math
+    'selectiontext':             palette['background'],       # Text color of selected text
+    'selectionmath':             palette['background'],       # Text color of selected math
+    'bottomarea':                palette['background'],       # Background color below end of document (if bottom-scrolling is enabled)
+    'inlinecompletion':          palette['foreground'],       # Inline completion color for the unambigous part
+    'nonuniqueinlinecompletion': palette['gray'],             # Inline completion color for the non-unique part
+
+    # Collapsible insets
+    # ------------------
+    # label color:        text color of attached *button* label
+    # text color:         text color of content box
+    # background color:   background color of content box
+    # frame color:        frame color of content box
+
+    # Default colors for content of collapsible insets (eg. notes, listings, options)
+    'collapsible':               palette['yellow'],           # Label color for button
+    'collapsibleframe':          palette['darkgray'],         # Frame color for content boxes (applies to almost all non-button frames)
+
+    # Colors for buttons
+    'buttonbg':                  palette['darkgray'],         # Background color for all buttons (including citations, references, labels)
+    'buttonframe':               palette['darkgray'],       # Frame color for all buttons
+    'buttonhoverbg':             palette['darkgray'],         # Background color for all buttons under focus
+
+    # Overwriting defaults for collapsibles
+    'note':                      palette['green'],            # Label color for notes (button text)
+    'notebg':                    palette['darkgray'],       # Background color for notes content
+    'comment':                   palette['green'],            # Label color for comments (button text)
+    'commentbg':                 palette['darkgray'],       # Background color for comments
+    'greyedout':                 palette['green'],            # Label color for greyedout inset (button text)
+    'greyedouttext':             palette['gray'],             # Text color for greyedout inset
+    'greyedoutbg':               palette['darkgray'],       # Background color for greyedout inset
+    'shaded':                    palette['background_dark'],  # Background color of shaded box
+    'listingsbg':                palette['background_dark'],  # Background color of listings inset
+
+    'branchlabel':               palette['magenta'],           # Label color for branches (button text)
+    'footlabel':                 palette['blue'],             # Label color for footnotes (button text)
+    'indexlabel':                palette['teal'],             # Label color for index inset (button text)
+    'marginlabel':               palette['blue'],             # Label color for margin notes (button text)
+    'urllabel':                  palette['gray'],             # Label color for URL inset (button text)
+    'urltext':                   palette['magenta'],          # Text color for URL inset
+
+    # Command insets
+    'command':                   palette['orange'],           # Label color for command inset (eg. cites, refs, labels)
+    'commandbg':                 palette['background'],       # Background color for non-editable buttons
+    'commandframe':              palette['darkgray'],         # Frame color for non-editable buttons
+    'command_broken':            palette['foreground'],       # Label color for broken inset (eg. broken references)
+    'commandbg_broken':          palette['red'],              # Background color for broken inset
+    'commandframe_broken':       palette['foreground'],       # Frame color for broken inset
+    'buttonhoverbg_broken':      palette['darkred'],          # Background color for broken inset button under focus
+
+    'latex':                     palette['cyan'],             # Text color for ERT (also used for beamer frame/section)
+    'textlabel1':                palette['blue'],             # Label color 1 for text (layout) labels (eg. beamer frame title, beamer note)
+    'textlabel2':                palette['green'],            # Label color 2 for text (layout) labels (eg. beamer example block, corollary))
+    'textlabel3':                palette['magenta'],          # Label color 3 for text (layout) labels (eg. beamer only, visible, etc)
+    'preview':                   palette['foreground'],       # Text color used for previews (e.g., mathpreview)
+
+    'graphicsbg':                palette['background'],       # Background color for graphics inset
+    'math':                      palette['foreground'],       # Text color for math inset
+    'mathbg':                    palette['background'],       # Background color for math inset
+    'mathframe':                 palette['darkgray'],         # Frame color for math inset under focus
+    'mathcorners':               palette['background'],       # Frame color for math inset not under focus
+    'mathline':                  palette['darkgray'],         # Line colors for math inset (eg. arrays, matrices)
+
+    # Math macros
+    'mathmacrobg':               palette['background'],       # Background color for math macro inset
+    'mathmacrohoverbg':          palette['darkgray'],         # Background color for math macro inset under focus
+    'mathmacrolabel':            palette['gray'],             # Label color for math macro inset
+    'mathmacroframe':            palette['darkgray'],         # Frame color for math macro inset
+    'mathmacroblend':            palette['foreground'],       # Blended color for math macro inset
+    'mathmacrooldarg':           palette['gray'],             # Macro template color for old parameters
+    'mathmacronewarg':           palette['foreground'],       # Macro template color for new parameters
+
+    'insetbg':                   palette['darkgray'],         # Background color for inset marker
+    'insetframe':                palette['yellow'],           # Frame color for inset marker
+    'insetlabel':                palette['foreground'],       # Label color for inset marker
+
+    'error':                     palette['darkred'],          # Text color for latex errors
+    'phantomtext':               palette['gray'],             # Text color for phantom inset
+    'special':                   palette['red'],              # Text color for special chars
+    'depthbar':                  palette['darkgray'],         # Depth bars in the margin (for nested environments)
+    'scroll':                    palette['red'],              # Color that indicates when a row can be scrolled
+    'language':                  palette['magenta'],          # Color for marking foreign language words
+    'eolmarker':                 palette['gray'],             # Text color for end of line marker
+    'added_space':               palette['gray'],             # Text color for spaces marker
+    'paragraphmarker':           palette['darkgray'],         # Text color for pilcrow marker (¶)
+
+    'appendix':                  palette['gray'],             # Begin appendix indicator color
+    'newpage':                   palette['gray'],             # Newpage indicator color
+    'pagebreak':                 palette['gray'],             # Pagebreak indicator color
+    'bookmark':                  palette['blue'],             # Bookmark indicator color
+
+    'tabularline':               palette['gray'],             # Table line color
+    'tabularonoffline':          palette['gray'],             # Table on/off line color
+
+    'previewframe':              palette['orange'],           # Frame color for preview inset (around ERT)
+    'regexpframe':               palette['green'],            # Frame color for regexp inset
+
+    # Track changes
+    'changebar':                 palette['blue'],             # Changebar color in left margin
+    'changedtextauthor1':        palette['blue'],             # Changed text color for N-th author
+    'changedtextauthor2':        palette['magenta'],          #   - " -
+    'changedtextauthor3':        palette['cyan'],             #   - " -
+    'changedtextauthor4':        palette['green'],            #   - " -
+    'changedtextauthor5':        palette['yellow'],           #   - " -
+    'changedtextcomparison':     palette['blue'],             # Changed text color for document comparison
+    'deletedtextmodifier':       palette['background'],       # Deleted text modifying color for brightness modulation (blended with author color)
+    # 'deletedtext':             palette['red'],              # Deleted text color (exported output)
+    # 'addedtext':               palette['green'],            # Added text color (exported output)
 }  # fmt: skip
 
 
